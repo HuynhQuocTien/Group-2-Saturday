@@ -1,4 +1,7 @@
-# Group-2-Saturday
-1. Huỳnh Quốc Tiến - 3121410497
-2. Phan Văn Hoàn - 3120410178
-3. Đặng Thị Mỹ Ly - 3120410313
+ ### Thành viên trong nhóm
+
+| STT |    MSSV    | Họ và tên       |
+| :-: | :--------: | --------------- |
+|  1  | 3121410497 | Huỳnh Quốc Tiến  |
+|  2  | 3120410178 | Phan Văn Hoàn   |
+|  3  | 3120410313 | Đặng Thị Mỹ Ly |
