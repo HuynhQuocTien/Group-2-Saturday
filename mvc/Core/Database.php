@@ -11,7 +11,6 @@ class DB{
         mysqli_select_db($this->con, $this->dbname);
         mysqli_query($this->con, "SET NAMES 'utf8'");
     }
-
     public function pagination($query, $limit, $start_from)
     {
         $sql = "$query LIMIT $start_from, $limit";
