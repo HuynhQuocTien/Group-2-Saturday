@@ -1,6 +1,3 @@
-<?php
-?>
-
 <button class="scroll-top scroll-to-target" data-target="html">
     <i class="fas fa-angle-up"></i>
 </button>
@@ -43,7 +40,7 @@
                                     </li> 
                                     
                                     <li class="header-btn"><a href="index.php?action=signin" class="btn">ĐĂNG NHẬP</a></li>
-                                    
+
                                 </ul>
                             </div>
                         </nav>
