@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý bán vé xem phim</title>
+    <!-- Import thư viện Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            height: 60px;
+        }
+
+        header img {
+            width: 100px;
+            /* Điều chỉnh kích thước của hình ảnh */
+            height: auto;
+            /* Đảm bảo tỷ lệ khung hình bảo tồn */
+            margin-bottom: 10px;
+            /* Khoảng cách giữa hình ảnh và văn bản */
+        }
+
+
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .sidebar {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            min-width: 250px;
+            /* Độ rộng cố định */
+            overflow-y: auto;
+            /* Cho phép cuộn nếu nội dung quá dài */
+            height: 100vh;
+            /* Chiều cao cố định */
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            /* Cho phép cuộn nếu nội dung quá dài */
+        }
+
+        .profile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .profile .username {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .profile .buttons {
+            position: absolute;
+            top: 100%;
+            /* Đặt nút xuống dưới tên user */
+            left: 0;
+            display: none;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .profile:hover .buttons {
+            display: block;
+        }
+
+        .category-buttons button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            /* Điều chỉnh padding cho button */
+            margin-bottom: 5px;
+            /* Thêm khoảng cách giữa các button */
+            width: 100%;
+            /* Sử dụng chiều rộng tối đa */
+            cursor: pointer;
+            text-align: left;
+            /* Căn lề trái cho nội dung của button */
+            display: block;
+            /* Đảm bảo button hiển thị dưới dạng block */
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .breadcrumb button {
+            background: none;
+            border: none;
+            color: #007bff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .breadcrumb button:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb button:last-child {
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="cgv.png" alt="HOLI Cinema Logo">
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile">
+                <img src="BV02.png" alt="Avatar">
+                <div class="username">Văn Hoàn</div>
+                <div class="buttons">
+                    <button><i class="fas fa-user-edit"></i> Update Profile</button>
+                    <button><i class="fas fa-sign-out-alt"></i> Đăng xuất</button>
+                </div>
+            </div>
+            <div class="category-buttons">
+                <button onclick="showContent('phim')"><i class="fas fa-film"></i> Phim</button>
+                <button onclick="showContent('lichchieu')"><i class="far fa-calendar-alt"></i> Lịch chiếu</button>
+                <button onclick="showContent('phongchieu')"><i class="fas fa-door-open"></i> Phòng chiếu</button>
+                <button onclick="showContent('danhsach')"><i class="fas fa-list"></i> Danh sách đặt vé</button>
+                <button onclick="showContent('khuyenmai')"><i class="fas fa-gift"></i> Khuyến mãi</button>
+                <button onclick="showContent('doan')"><i class="fas fa-utensils"></i> Đồ ăn</button>
+                <button onclick="showContent('thongke')"><i class="fas fa-chart-bar"></i> Thống kê</button>
+                <button onclick="showContent('phanquyen')"><i class="fas fa-user-lock"></i> Phân quyền</button>
+                <button onclick="showContent('checkve')"><i class="fas fa-ticket-alt"></i> Check vé</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="breadcrumb" id="breadcrumb">
+                <button onclick="showContent('trangchu')">Trang chủ</button>
+            </div>
+            <div id="mainContent">
+                <!-- Nội dung chính của trang web sẽ được đặt ở đây -->
+                <h1>Trang quản lý bán vé xem phim</h1>
+                <p>Xin chào! Đây là trang quản lý bán vé xem phim.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var historyStack = []; // Khai báo mảng historyStack ở ngoài hàm showContent
+
+        function showContent(category) {
+            var content = document.getElementById('mainContent');
+            switch (category) {
+                case 'phim':
+                    content.innerHTML = '<h2>Phim</h2><p>Nội dung phim</p>';
+                    break;
+                case 'lichchieu':
+                    content.innerHTML = '<h2>Lịch chiếu</h2><p>Nội dung lịch chiếu</p>';
+                    break;
+                case 'phongchieu':
+                    content.innerHTML = '<h2>Phòng chiếu</h2><p>Nội dung phòng chiếu</p>';
+                    break;
+                case 'danhsach':
+                    content.innerHTML = '<h2>Danh sách đặt vé</h2><p>Nội dung danh sách đặt vé</p>';
+                    break;
+                case 'khuyenmai':
+                    content.innerHTML = '<h2>Khuyến mãi</h2><p>Nội dung khuyến mãi</p>';
+                    break;
+                case 'doan':
+                    content.innerHTML = '<h2>Đồ ăn</h2><p>Nội dung đồ ăn</p>';
+                    break;
+                case 'thongke':
+                    content.innerHTML = '<h2>Thống kê</h2><p>Nội dung thống kê</p>';
+                    break;
+                case 'phanquyen':
+                    content.innerHTML = '<h2>Phân quyền</h2><p>Nội dung phân quyền</p>';
+                    break;
+                case 'checkve':
+                    content.innerHTML = '<h2>Check vé</h2><p>Nội dung check vé</p>';
+                    break;
+                case 'trangchu':
+                    content.innerHTML = '<h1>Trang quản lý bán vé xem phim</h1><p>Xin chào! Đây là trang quản lý bán vé xem phim.</p>';
+                    break;
+                default:
+                    break;
+            }
+
+            // Thêm trang vào stack lịch sử
+            addToHistory(category);
+
+            // Cập nhật breadcrumb
+            updateBreadcrumb();
+        }
+
+        // Lưu trang hiện tại vào stack
+        function addToHistory(category) {
+            // Kiểm tra xem trang đã có trong lịch sử chưa
+            var index = historyStack.indexOf(category);
+            if (index !== -1) {
+                // Nếu trang đã có trong lịch sử, loại bỏ các trang sau trang đó
+                historyStack.splice(index + 1);
+            } else {
+                // Nếu trang chưa có trong lịch sử, thêm nó vào stack
+                historyStack.push(category);
+            }
+        }
+
+        // Cập nhật breadcrumb
+        function updateBreadcrumb() {
+            var breadcrumb = document.getElementById('breadcrumb');
+            breadcrumb.innerHTML = '';
+            historyStack.forEach(function (page, index) {
+                var button = document.createElement('button');
+                button.textContent = page.charAt(0).toUpperCase() + page.slice(1); // Chuyển đổi ký tự đầu tiên thành chữ hoa
+                if (index === historyStack.length - 1) {
+                    button.style.fontWeight = 'bold';
+                } else {
+                    button.addEventListener('click', function () {
+                        historyStack.splice(index); // Xóa các trang phía sau trang được chọn khỏi stack
+                        showContent(page);
+                    });
+                }
+                breadcrumb.appendChild(button);
+                if (index !== historyStack.length - 1) {
+                    var arrow = document.createElement('span');
+                    arrow.textContent = ' > ';
+                    breadcrumb.appendChild(arrow);
+                }
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>
