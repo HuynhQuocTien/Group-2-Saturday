@@ -114,3 +114,8 @@ a:hover {
 p {
     color: #0000ff;
 }
+.text-center a.signup-link {
+    color: #ffd21f; /* Màu mặc định cho "Sign-Up" */
+    margin-top: 20px; /* Khoảng cách từ "Forget Password" */
+}
+
