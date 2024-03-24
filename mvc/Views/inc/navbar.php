@@ -39,7 +39,8 @@
                                         </div>
                                     </li> 
                                     
-                                    <li class="header-btn"><a href="index.php?action=signin" class="btn">ĐĂNG NHẬP</a></li>
+                                    <!-- <li class="header-btn"><a href="index.php?action=signin" class="btn">ĐĂNG NHẬP</a></li> -->
+                                    <li class="header-btn"><a href="mvc/Views/page/login.php" class="btn">ĐĂNG NHẬP</a></li>
 
                                 </ul>
                             </div>
