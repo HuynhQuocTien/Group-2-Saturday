@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif; 
+    background-color: hsl(0, 0%, 85%);
+    font-size: 16px; 
+   
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.foods-table {
+    width: 45%;
+}
+
+.foods-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.foods-table th, .foods-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.foods-table th {
+    background-color: #f2f2f2;
+}
+
+.food-details {
+    width: 45%;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+button {
+    background-color: #fff4c4;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 200px; /* Thiết lập chiều rộng tối đa của nút */
+}
+
+button:hover {
+    background-color: #ffd208;
+}
+
+
+/* Sử dụng media query để điều chỉnh kích thước nút khi màn hình nhỏ hơn 768px */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .foods-table, .food-details {
+        width: 100%;
+    }
+
+    button {
+        width: 100%; /* Cài đặt chiều rộng nút để đảm bảo nút phản ánh kích thước của màn hình */
+    }
+}
