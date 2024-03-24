@@ -371,6 +371,7 @@ label {
 }
 .main-menu .navigation li.menu-item-has-children .dropdown-btn {
   display: none;
+  /* aa */
 }
 .header-action > ul {
   display: flex;
@@ -3576,3 +3577,49 @@ select.btn.min option {
 #showTimes li.selected {
   background-color: #ff0000;
 }
+
+/* start  */
+.sub-menu{
+  margin-top: -30%;
+}
+#menu .menu-item-has-children{
+  position: relative;
+}
+#menu a{
+  text-decoration: auto;
+  display: block;
+  font-size: 14px;
+  position: relative;
+  line-height: 30px;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+#menu .sub-menu a:hover {
+
+  color: #E4D804;
+
+}
+.sub-menu {
+  background: url(../img/bg/bg_menu_hover.png) repeat scroll center center rgba(0, 0, 0, 0);
+  left: 0;
+  padding: 3px;
+  position: absolute;
+  width: 190px;
+  z-index: 10;
+  display: none;
+  text-align: left;
+}
+#menu li{
+  position: relative;
+}
+#menu li:hover .sub-menu {
+  display: block;
+}
+.sub-menu li {
+  margin-left: 0 !important;
+}
+.sub-menu > ul {
+  display: none;
+}
+/* end  */

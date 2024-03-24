@@ -61,7 +61,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="copyright-text">
-                        <p>Bản quyền © 2023. Mọi quyền đều thuộc về <a href="index.html">Movflx</a></p>
+                        <p>Bản quyền © 2023. Mọi quyền đều thuộc về <a href="index.php">CGV</a></p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">

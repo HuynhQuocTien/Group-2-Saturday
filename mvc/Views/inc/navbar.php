@@ -14,13 +14,28 @@
                                     <img src="assets/img/logo/logo.png" alt="Logo" style="width: 100%;">
                                 </a>
                             </div>
-                            <div class="navbar-wrap main-menu d-none d-lg-flex">
+                            <div class="navbar-wrap main-menu d-none d-lg-flex" id="menu">
                                 <ul class="navigation">
-                                    <li class="active menu-item-has-children"><a href="index.php">TRANG CHỦ</a>
+                                    <li class="active menu-item-has-children"><a href="index.php">TRANG CHỦ</a>                                    
                                     </li>
-                                    <li class="menu-item-has-children"><a href="index.php?action=list_movie">DANH SÁCH PHIM</a>
+                                    <li class="menu-item-has-children">
+                                        <a href="index.php?action=list_movie">PHIM</a>  
+                                    <ul class="sub-menu" id="submenu">
+                                        <li><a href="#" class="level1 ">Phim Đang Chiếu</a></li>
+                                        <li><a href="#" class="level1 ">Phim Sắp Chiếu</a></li>
+                                    </ul>
+
                                     </li>
-                                    <li><a href="index.php?action=combo">GÓI COMBO</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="index.php?action=list_movie">RẠP CGV</a>  
+                                    <ul class="sub-menu" id="submenu">
+                                        <li class="nav-1-1 first"><a href="#" class="level1 ">Tất cả các rạp</li>
+                                        <li class="nav-1-2 active last"><a href="#" class="level1 ">Rạp đặc biệt</a></li>
+                                        <li class="nav-1-3 active last"><a href="#" class="level1 ">Rạp 3D</a></li>
+                                    
+                                    </ul>
+
+                                    </li>
                                     <li class="menu-item-has-children"><a href="index.php?action=blog">TIN TỨC</a>
                                     </li>
                                     <li><a href="index.php?action=contact">LIÊN HỆ</a></li>
@@ -28,6 +43,7 @@
                                     
                                 </ul>
                             </div>
+                        
                             <div class="header-action d-none d-md-block">
                                 <ul>
                                     <li class="d-none d-xl-block">
@@ -90,7 +106,7 @@
 
     /* Định dạng các mục menu */
     .navigation li a {
-        color: #333;
+        color: #f0f0f0;
         text-decoration: none;
         font-weight: 500;
         font-size: 14px;
