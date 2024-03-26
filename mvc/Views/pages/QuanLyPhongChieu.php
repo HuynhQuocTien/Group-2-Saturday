@@ -60,7 +60,11 @@
 
         <section class="ghe-vip">
             <div class="ghe-doi">
-                <button class="btnxoa" onclick="addRapToDropdown()">Thêm</button>
+                <button class="btnthem" onclick="addRapToDropdown()">Thêm</button>
+                <button class="btnsua">Sửa</button>
+                <button class="btnxoa">Xóa</button>
+                <button class="btnthemhang">Thêm một hàng ghế</button>
+                <button class="btnthemcot">Thêm một cột ghế</button>
                 <b class="danh-sch-gh">Danh sách ghế</b>
             </div>
             <div class="table-parent">
@@ -163,9 +167,7 @@
                   </table>
                   
 
-                <button class="btnxoa">Sửa</button>
-                <button class="btnxoa1">Xóa</button>
-                <button class="btnthemhang">Thêm một hàng ghế</button>
+                
             </div>
         </section>
         <div class="btns-ghe">
@@ -221,6 +223,55 @@ function addToDropdown(rapName) {
     // Add the option to the dropdown with id 'txtloai'
     document.getElementById('ds_rap').appendChild(option);
 }
+
+
+// Function to add a new column to the table
+function addColumn() {
+    var table = document.querySelector('.table1');
+    var rowCount = table.rows.length;
+
+    // Create header row if it doesn't exist
+    if (rowCount === 0) {
+        var headerRow = table.insertRow(0);
+        var headerCell = document.createElement('th');
+        headerCell.innerHTML = ''; // Blank header for the first cell
+        headerRow.appendChild(headerCell);
+    }
+
+    // Loop through existing rows and add cell to each row
+    for (var i = 0; i < rowCount; i++) {
+        var row = table.rows[i];
+        var cell = document.createElement('td');
+        if (i === 0) {
+            cell.innerHTML = row.cells.length; // Set cell content to the current column count
+        } else {
+            cell.innerHTML = ''; // Leave other cells blank
+        }
+        row.appendChild(cell);
+    }
+}
+
+// Function to add a new row to the table
+function addRow() {
+    var table = document.querySelector('.table1');
+    var row = table.insertRow(-1);
+    var rowCount = table.rows.length;
+    var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    for (var i = 0; i < rowCount; i++) {
+        var cell = row.insertCell(i);
+        if (i === 0) {
+            cell.innerHTML = alphabet[rowCount - 2]; // Start from 'A'
+        } else {
+            cell.innerHTML = ''; // Leave other cells blank
+        }
+    }
+}
+
+
+// Add event listeners to the buttons
+document.querySelector('.btnthemcot').addEventListener('click', addColumn);
+document.querySelector('.btnthemhang').addEventListener('click', addRow);
 
         
     </script>

@@ -254,51 +254,46 @@
     min-width: 109px;
   }
   .ghe-doi {
+    height: 100px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: var(--gap-mini);
   }
-  .table1 {
+  .table-parent {
+    margin-left: 100px;
+    height: 304px; /* Đã được chỉ định cố định chiều cao */
+    width: 800px;
+    overflow: auto; /* Thêm trạng thái cuộn khi nội dung vượt quá kích thước */
+}
+
+
+.table1 {
     border: 0;
     background-color: var(--color-gainsboro);
     outline: 0;
-    position: absolute;
-    top: 90px;
-    left: 0;
     table-layout: fixed; /* Đảm bảo các ô có cùng kích thước */
-    width: 660px;
 }
 
+/* Điều chỉnh chiều rộng của các ô trong bảng */
 .table1 td,
 .table1 th {
-    width: 35px; /* Kích thước chiều rộng của mỗi ô */
-    height: 20px; /* Kích thước chiều cao của mỗi ô */
+    width: 50px; /* Điều chỉnh kích thước chiều rộng của mỗi ô */
+    height: 20px; /* Điều chỉnh kích thước chiều cao của mỗi ô */
     padding: 5px; /* Khoảng cách giữa nội dung của mỗi ô và viền của ô */
     text-align: center; /* Căn giữa nội dung của mỗi ô */
 }
+
   .selected {
     background-color: yellow; /* Màu của ô khi được chọn */
 }
-  .btnthemhang {
-    position: absolute;
-    background-color: var(--color-gainsboro);
-  }
-  .btnthemhang {
-    border-radius: 8px;
-    border: none;
-    top: 50px;
-    right: 0;
-    width: 194px;
-    height: 32px;
-  }
-  .btnthemhang:hover {
-    background-color: rgb(160, 202, 219); /* Màu nền khi di chuột qua */
-  }
+
 /* ///////// */
 
-.btnxoa, .btnxoa1 {
+.btnxoa, .btnthem,.btnsua,.btnthemhang,.btnthemcot {
+    width: 100px;
     position: relative; /* Thay đổi từ absolute thành relative */
     display: inline-block; /* Thêm thuộc tính display để nút không bị tràn ra khỏi div */
     background-color: transparent; /* Thay đổi màu nền thành trong suốt */
@@ -310,28 +305,37 @@
     transition: all 0.3s ease;
 }
 
-.btnxoa:hover, .btnxoa1:hover {
+.btnxoa:hover, .btnthem:hover ,.btnsua:hover,.btnthemhang:hover,.btnthemcot:hover{
     background-color: rgb(160, 202, 219); /* Màu nền khi di chuột qua */
     
 }
-.btnxoa1{
-    margin-left: 30px;
-}
-.btnxoa:focus, .btnxoa1:focus {
+.btnxoa:focus, .btnthem:focus ,.btnsua:focus,.btnthemhang:focus,.btnthemcot:focus{
     outline: none; /* Xóa đường viền khi focus */
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Hiệu ứng focus */
+}
+.btnsua{
+  margin-left: 120px;
+  margin-top: -55px;
+}
+.btnxoa{
+  margin-left: 240px;
+  margin-top: -55px;
+}
+.btnthemhang{
+  width: 200px;
+  margin-left: 650px;
+  margin-top: -55px;
+}
+.btnthemcot{
+  width: 200px;
+  margin-left: 400px;
+  margin-top: -55px;
 }
 
 /* ////// */
   
-  
-  .table-parent {
-    height: 304px;
-    flex: 1;
-    position: relative;
-    min-width: 419px;
-    max-width: 100%;
-  }
+ 
+
   .ghe-vip {
     align-self: stretch;
     display: flex;
